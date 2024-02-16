@@ -1,0 +1,22 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8mb4
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  username: abid
+  password: password
+  host: 127.0.0.1
+
+development:
+  <<: *default
+  database: user_portal_development
+
+test:
+  <<: *default
+  database: user_portal_test
+
+production:
+  <<: *default
+  database: user_portal_production
+  username: abid
+  password: password
+  host: your_mysql_production_host

@@ -42,7 +42,7 @@
             <tbody>
               <% @leads.each_with_index do |lead, idx| %>
               <tr>
-                <td scope="row"><%= idx %></td>
+                <td scope="row"><%= idx + 1 %></td>
                 <td><%= lead.contact %></td>
                 <td><%= lead.email %></td>
                 <td><%= lead.phone %></td>
@@ -59,6 +59,7 @@
             </tbody>
           </table>
           
+        <%= paginate @leads, theme: "bootstrap-5" %>  
         </div>
       </div>
    </div>

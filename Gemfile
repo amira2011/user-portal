@@ -85,3 +85,7 @@ end
 gem "sorcery", "~> 0.16.5"
 
 gem "faker"
+
+gem "kaminari"
+
+gem "bootstrap5-kaminari-views"

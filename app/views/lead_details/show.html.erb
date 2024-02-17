@@ -1,10 +1,15 @@
+ 
 <!-- Content Row -->
 <div class="row" data-controller="lead">
-       
+   
      <div class="card shadow m-4">
       <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Leads</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Lead Details</h6>
+        
       </div>
+       <div class="card-header py-3">
+       <%= link_to "All Leads", leads_path %>
+       </div>
       <div class="card-body">
         <div class="table-responsive">
         <table class="table table-bordered table-hover text-nowrap "  id="dataTable"  width="90%" cellspacing="0">
@@ -20,7 +25,7 @@
               <% end %>   
             </tbody>
           </table>
-          
+            
         </div>
       </div>
    </div>

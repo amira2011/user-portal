@@ -10,7 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_02_16_164708) do
+ActiveRecord::Schema[7.0].define(version: 2024_02_17_132443) do
+  create_table "lead_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "lead_id", null: false
+    t.boolean "home_garage"
+    t.boolean "home_owner"
+    t.integer "home_length"
+    t.boolean "interested_in_home_insurance"
+    t.boolean "interested_in_condo_insurance"
+    t.boolean "interested_in_life_insurance"
+    t.boolean "interested_in_renters_insurance"
+    t.boolean "interested_in_usage_based_policy"
+    t.boolean "currently_insured"
+    t.string "current_company"
+    t.integer "current_customer"
+    t.integer "continuous_coverage"
+    t.date "current_policy_expiration_date"
+    t.boolean "military_affiliation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["current_company"], name: "index_lead_details_on_current_company"
+    t.index ["lead_id"], name: "index_lead_details_on_lead_id"
+  end
+
   create_table "leads", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -37,5 +59,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_16_164708) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "lead_details", "leads"
   add_foreign_key "leads", "users"
 end

@@ -1,5 +1,5 @@
 class LeadsController < ApplicationController
   def index
-    @leads = Lead.all
+    @leads = current_user.leads
   end
 end

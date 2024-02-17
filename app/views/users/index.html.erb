@@ -1,0 +1,9 @@
+<h1>Users</h1>
+
+<% @users.each do |user| %>
+
+    <%= user.name %> <br>
+    <%= user.email %><br>
+    <%= user.crypted_password %><br>
+<%= user.salt %><br>
+    <% end %>

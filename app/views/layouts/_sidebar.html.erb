@@ -1,0 +1,58 @@
+<!-- Sidebar -->
+<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+    <!-- Sidebar - Brand -->
+    <a class="sidebar-brand d-flex align-items-center justify-content-center"  >
+        <div class="sidebar-brand-icon ">
+        <i class="fa-solid fa-building-columns"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">User Portal</div>
+    </a>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider my-0">
+
+    <!-- Nav Item - Dashboard -->
+    <li class="nav-item active">
+    
+        <a class="nav-link" href= <%= root_path %> >
+            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <span>Dashboard</span></a>
+    </li>
+
+    <!-- Divider -->
+    <hr class="sidebar-divider">
+
+    <!-- Heading -->
+    <div class="sidebar-heading">
+        Controllers
+    </div>
+
+    <!-- Nav Item - Pages Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href= <%= leads_path %> data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+            aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fa-solid fa-people-group"></i>
+            <span>Leads</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+            <%= link_to "All", leads_path, :class => "collapse-item" %>
+          
+
+               
+            </div>
+        </div>
+    </li>
+
+    
+
+    
+     
+   
+
+    
+ 
+
+</ul>
+<!-- End of Sidebar -->

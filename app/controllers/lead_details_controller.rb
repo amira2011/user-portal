@@ -1,4 +1,6 @@
 class LeadDetailsController < ApplicationController
+  layout "admin"
+
   def index
   end
 

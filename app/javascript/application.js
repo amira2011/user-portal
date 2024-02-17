@@ -6,3 +6,7 @@ import "bootstrap"
 import "jquery"
 import "jquery_ujs"
 import "./jquery_ui"
+
+$("#notice").fadeOut(4000)
+
+$("#alert").fadeOut(4000)

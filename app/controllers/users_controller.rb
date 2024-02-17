@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout "admin"
   skip_before_action :require_login, only: [:new, :create] # this should only be used if you are allowing users to register themselves.
 
   def new

@@ -1,47 +1,40 @@
+<div class="d-flex justify-content-center align-items-center" >
+  <div style="width: 100%; max-width: 500px;">  
+    <h2 class="text-center mb-4">Register User</h2> 
+    <% if @user.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-<% if @user.errors.any? %>
+    <%= form_with model: @user do |f| %>
+      <div class="mb-3">
+        <%= f.label :name, class: "form-label" %>
+        <%= f.text_field :name, class: "form-control", required: true %>
+      </div>
 
-<ul class="text-danger"> 
- 
+      <div class="mb-3">
+        <%= f.label :email, class: "form-label" %>
+        <%= f.email_field :email, class: "form-control", required: true %>
+      </div>
 
-   <% @user.errors.full_messages.each do |msg| %>
-   <li> <%= msg %> </li>
+      <div class="mb-3">
+        <%= f.label :password, class: "form-label" %>
+        <%= f.password_field :password, class: "form-control", required: true %>
+      </div>
 
-   <% end %>
+      <div class="mb-3">
+        <%= f.label :password_confirmation, class: "form-label" %>
+        <%= f.password_field :password_confirmation, class: "form-control", required: true %>
+      </div>
 
-
-
-</ul>
-
-
-
-<% end %>
-
-<%= form_with model: @user do |f| %>
-<div>
-<%= f.label :name %>
-<%= f.text_field :name %>
- 
+      <div class="mb-3">
+        <%= f.submit class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
 </div>
-<div>
-<%= f.label :email %>
-<%= f.email_field :email %>
- 
-</div>
-<div>
-<%= f.label :password %>
-<%= f.password_field :password %>
- 
-</div>
-<div>
-<%= f.label :password_confirmation %>
-<%= f.password_field :password_confirmation %>
- 
-</div>
-
- 
-<div>
- <%= f.submit %>
-</div>
-
-<% end %>

@@ -37,8 +37,10 @@
         </a>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-            <%= link_to "All", leads_path, :class => "collapse-item" %>
-          
+            <%= link_to "Leads", leads_path, class: "collapse-item" %>
+           <% if current_user %>
+                 <%= link_to "Profile", edit_user_path(current_user.id), class: "collapse-item" %>
+           <% end %>
 
                
             </div>

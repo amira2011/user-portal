@@ -7,6 +7,7 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "faker"
 20.times do
+
   lead = Lead.create!(
     user: User.last,
     first_name: Faker::Name.first_name,

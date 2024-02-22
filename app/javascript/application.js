@@ -13,5 +13,6 @@ $("#alert").fadeOut(4000)
 
  $(document).on('click', '.nav-list', function () {
                 $(this).addClass("active").siblings().removeClass("active")
-                 
+                 console.log("You Clicked Me")
+                  $(".active").css({"color": "black", "font-size": "200%"}); 
             })

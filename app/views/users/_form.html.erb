@@ -3,15 +3,7 @@
 
 <div class="d-flex justify-content-center align-items-center mt-5 " >
   <div class = "border-0 shadow p-5" style="width: 100%; max-width: 500px;">  
-    <% if @user.errors.any? %>
-      <div class="alert alert-danger" role="alert">
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+    
     <div class="text-center">
     
       <h1 class="h4 text-gray-900 mb-4"><%= @user.new_record? ? "Create Account!" : "Edit Profile" %></h1>
@@ -39,6 +31,15 @@
      <div class="text-center">
        <%= link_to "Already have an account? Login!", :login, class: "small" %>
     </div>
+    <% end %>
+    <% if @user.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
    </div>
 </div>

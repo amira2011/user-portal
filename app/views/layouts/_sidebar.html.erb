@@ -13,7 +13,7 @@
     <hr class="sidebar-divider my-0">
 
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
+    <li class="nav-item">
     
         <a class="nav-link" href= <%= root_path %> >
             <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -23,31 +23,21 @@
     <!-- Divider -->
     <hr class="sidebar-divider">
 
-    <!-- Heading -->
-    <div class="sidebar-heading">
-        Controllers
-    </div>
+     
+    
 
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href= <%= leads_path %> data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fa-solid fa-people-group"></i>
-            <span>Leads</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-            <%= link_to "Leads", leads_path, class: "collapse-item" %>
-           <% if current_user %>
-                 <%= link_to "Profile", edit_user_path(current_user.id), class: "collapse-item" %>
-           <% end %>
-
-               
-            </div>
-        </div>
+    <li class="nav-item nav-list active">
+     <%= link_to "Leads", leads_path, class: "nav-link " %>
+                 
     </li>
 
-    
+    <li class="nav-item nav-list">
+
+    <% if current_user %>
+                 <%= link_to "Profile", edit_user_path(current_user.id), class: "nav-link" %>
+           <% end %>
+               
+    </li>
 
     
      

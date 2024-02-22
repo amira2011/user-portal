@@ -10,3 +10,8 @@ import "./jquery_ui"
 $("#notice").fadeOut(4000)
 
 $("#alert").fadeOut(4000)
+
+ $(document).on('click', '.nav-list', function () {
+                $(this).addClass("active").siblings().removeClass("active")
+                 
+            })

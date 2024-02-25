@@ -11,6 +11,8 @@
                             <div class="col-lg-12">
                                 <div class="p-5">
                                     <div class="text-center">
+                                    <p id="notice" style="text-align: center; color: red"><%= flash[:notice] %></p>
+                                     <p id="alert"style="text-align: center; color: red"><%= flash[:alert] %></p>
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back! </h1>
                                     </div>
                                     <%= form_with url: login_path, method: :post, class: "user", novalidate: true do |f| %>

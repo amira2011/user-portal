@@ -1,19 +1,12 @@
- 
 
-<!-- Content Row -->
-<div class="row" data-controller="lead">
-       
-     <div class="card shadow m-4">
-      <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Leads</h6>
-      </div>
-      <div class="card-body">
-        <div class="table-responsive">
-        <table class="table table-bordered table-hover text-nowrap "  id="dataTable"  width="90%" cellspacing="0">
 
-             <thead>
+
+<div class="table-wrapper">
+        <h3 class="card-title">Leads Data</h3>
+        <div class="table-container">
+          <table>
+            <thead>
               <tr>
-                <th> Sr.No </th>
                 <th> Name </th>
                 <th> Email </th>
                 <th> Phone </th>
@@ -21,48 +14,24 @@
                 <th> City </th>
                  <th> State </th>
                 <th> Zip </th>
-               
-                <th> Lead Details </th>
               </tr>
             </thead>
-            <tfoot>
-              <tr>
-               <th> Sr.No </th>
-                <th> Name </th>
-                <th> Email </th>
-                <th> Phone </th>
-                <th> Address </th>
-                <th> City </th>
-                 <th> State </th>
-                <th> Zip </th>
-               
-                <th> Lead Details </th>
-              </tr>
-            </tfoot>
             <tbody>
               <% @leads.each_with_index do |lead, idx| %>
               <tr>
-                <td scope="row"><%= idx + 1 %></td>
-                <td><%= lead.contact %></td>
+                
+                <td> <%= link_to "#{lead.contact}", lead_detail_path(lead.id), class: "btn btn-link " %> </td>
                 <td><%= lead.email %></td>
                 <td><%= lead.phone %></td>
                 <td><%= lead.complete_address %></td>
                 <td><%= lead.city %></td>
                 <td><%= lead.state %></td>
-                 <td><%= lead.zip %></td>
-                <td>
-                  <%= link_to "Details", lead_detail_path(lead.id), class: "btn btn-primary " %>
-                   
-                </td>
+                <td><%= lead.zip %></td>
               </tr>
-              <% end %>   
+                <% end %>   
+               
             </tbody>
           </table>
-          
-        <%= paginate @leads, theme: "bootstrap-5" %>  
+          <%= paginate @leads, theme: "bootstrap-5" %>  
         </div>
       </div>
-   </div>
-</div>
-<!-- Content Row -->
- 

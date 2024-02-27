@@ -1,0 +1,436 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+}
+
+.login-container {
+  position: absolute; /* Position the element absolutely relative to its first positioned (not static) ancestor */
+  top: 30%; /* Position the top edge of the element in the middle of the screen */
+  left: 50%; /* Position the left edge of the element in the middle of the screen */
+  transform: translate(-50%, -50%);
+}
+.login-logo {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.login-wrapper {
+  width: 420px;
+  background: #eeeeee;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.text-center {
+  text-align: center;
+  color: rgba(233, 55, 138, 1);
+}
+
+.login-wrapper .input-box {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  margin: 30px 0;
+}
+
+.login-wrapper .input-box input {
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgba(202, 148, 148, 0.589);
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 20px 45px 20px 20px;
+  transition: border 0.1s ease; /* Add a transition effect for the border */
+}
+.input-search {
+  height: 40px;
+  border: 1px solid rgba(117, 62, 162, 0.59);
+  border-radius: 40px;
+  transition: border 0.1s ease;
+  padding: 10px 15px;
+}
+.login-wrapper .input-box input:focus {
+  border: 2px solid rgba(202, 148, 148, 1);
+}
+
+.login-wrapper .input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: rgba(233, 55, 138, 1);
+}
+
+.login-wrapper .btn {
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: rgba(233, 55, 138, 1);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.login-wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin-top: 20px;
+}
+.login-wrapper .register-link p a {
+  color: rgba(233, 55, 138, 1);
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-wrapper .register-link p a:hover {
+  text-decoration: underline;
+}
+
+.registration-container {
+  position: absolute; /* Position the element absolutely relative to its first positioned (not static) ancestor */
+  top: 40%; /* Position the top edge of the element in the middle of the screen */
+  left: 50%; /* Position the left edge of the element in the middle of the screen */
+  transform: translate(-50%, -50%);
+}
+
+.registration-wrapper {
+  width: 420px;
+  background: #eeeeee;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.registration-wrapper .input-box {
+  width: 100%;
+  height: 50px;
+  position: relative;
+  margin: 30px 0;
+}
+
+.registration-wrapper .input-box input {
+  height: 100%;
+  width: 100%;
+  border: 1px solid rgba(202, 148, 148, 0.589);
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 20px 45px 20px 20px;
+  transition: border 0.1s ease; /* Add a transition effect for the border */
+}
+
+.registration-wrapper .input-box input:focus {
+  border: 2px solid rgba(202, 148, 148, 1);
+}
+
+.registration-wrapper .input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: rgba(233, 55, 138, 1);
+}
+
+.registration-wrapper .btn {
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: rgba(233, 55, 138, 1);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.registration-wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin-top: 20px;
+}
+.registration-wrapper .register-link p a {
+  color: rgba(233, 55, 138, 1);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16.5px;
+}
+.registration-wrapper .register-link p a:hover {
+  text-decoration: underline;
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 240px;
+  height: 100vh;
+  padding: 0 1.7rem;
+  color: #fff;
+
+  transition: all 0.5s linear;
+  background: #9a9a9a;
+}
+/* .sidebar:hover {
+  width: 240px;
+  transition: 0.5s; 
+  }
+  */
+
+.logo img {
+  display: block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 10px auto;
+}
+
+.menu {
+  margin-top: 50px;
+  height: 88%;
+  position: relative;
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  padding: 0.7rem;
+  margin: 8px 0;
+  border-radius: 8px;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu li:hover,
+.active {
+  background: #bbbbbb;
+}
+
+.menu li a {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.menu a span {
+  overflow: hidden;
+}
+.menu a i {
+  font-size: 1.2rem;
+}
+
+.logout {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.main-content {
+  position: relative;
+  background: #eeeeee;
+  width: 100%;
+  padding: 1rem;
+}
+.header-wrapper img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px 2rem;
+  margin-bottom: 1rem;
+}
+.header-title {
+  color: #9a9a9a;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.search-box {
+  background: rgb(237, 237, 237);
+  border-radius: 15px;
+  color: rgba(113, 99, 186, 255);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 12px;
+}
+.search-box input {
+  background: transparent;
+  padding: 10px;
+}
+
+.search-box i {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+.search-box i:hover {
+  transform: scale(1.2);
+}
+
+.card-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+}
+.card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.card-title {
+  color: #9a9a9a;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+.payment-card {
+  background: rgb(229, 223, 223);
+  border-radius: 10px;
+  padding: 1.2rem;
+  width: 290px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.5s ease-out;
+}
+
+.payment-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.amount {
+  display: flex;
+  flex-direction: column;
+}
+.title {
+  font-size: 12px;
+  font-weight: 200;
+}
+.value {
+  font-size: 24px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: 600;
+}
+.icon {
+  color: #fff;
+  padding: 1rem;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  background: #78909c;
+}
+.card-detail {
+  font-size: 18px;
+  color: #777777;
+  letter-spacing: 2px;
+  font-family: "Courier New", Courier, monospace;
+}
+.light-red {
+  background: rgb(251, 233, 233);
+}
+.dark-red {
+  background: rgb(255, 82, 82);
+}
+.light-blue {
+  background: #cfd8dc;
+}
+.light-grey {
+  background: #cfd8dc;
+}
+.light-purple {
+  background: rgb(254, 226, 254);
+}
+.dark-purple {
+  background: purple;
+}
+.light-green {
+  background: #cbd5c0;
+}
+.dark-green {
+  background: #9caf88;
+}
+
+.table-wrapper {
+  background: #fff;
+  margin-top: 2rem;
+  border-radius: 10px;
+  padding: 2rem;
+}
+.table-container {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: #a7a7a7;
+  color: #fff;
+}
+
+th {
+  padding: 15px;
+  text-align: left;
+}
+tbody {
+  background: #f2f2f2;
+}
+td {
+  padding: 10px;
+  font-size: 14px;
+  color: #333;
+}
+tr:nth-child(even) {
+  background: #fff;
+}
+
+.table-container button {
+  color: green;
+  background: none;
+  cursor: pointer;
+}

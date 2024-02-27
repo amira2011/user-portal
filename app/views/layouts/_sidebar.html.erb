@@ -1,48 +1,54 @@
-<!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center"  >
-        <div class="sidebar-brand-icon ">
-        <i class="fa-solid fa-building-columns"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">User Portal</div>
-    </a>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item">
-    
-        <a class="nav-link" href= <%= root_path %> >
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <li class="nav-item nav-list active">
-     <%= link_to "Leads", leads_path, class: "nav-link " %>
-                 
-    </li>
-
-    <li class="nav-item nav-list">
-
-    <% if current_user %>
-                 <%= link_to "Profile", edit_user_path(current_user.id), class: "nav-link" %>
-           <% end %>
-               
-    </li>
-
-    
-     
-   
-
-    
  
 
-</ul>
-<!-- End of Sidebar -->
-
+ <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="logo">
+      <%= image_tag "profile.jpeg" %>
+        
+      </div>
+      <ul class="menu">
+        <li class="active">
+            
+            <%= link_to leads_path do %>
+                <i class="fas fa-chart-bar"></i> <span>Leads</span>
+            <% end %>
+        </li>
+        <li>
+          <%= link_to edit_user_path(current_user.id) do %>
+                <i class="fas fa-user"></i> <span>Edit Profile</span>
+            <% end %>
+         
+          
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-chart-bar"></i> <span> Statistics</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-briefcase"></i> <span> Carrer</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-question-circle"></i> <span> FAQ</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-star"></i> <span> Testimonials</span>
+          </a>
+        </li>
+        <li>
+          <a href="#"> <i class="fas fa-cog"></i> <span> Settings</span> </a>
+        </li>
+        <li>
+         <%= link_to :logout, method: :post do %>
+                <i class="fas fa-user"></i> <span>Logout</span>
+            <% end %>
+        </li>
+      </ul>
+    </div>
+    <!-- Sidebar -->
+ 

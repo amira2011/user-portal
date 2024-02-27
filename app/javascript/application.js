@@ -6,13 +6,19 @@ import "bootstrap"
 import "jquery"
 import "jquery_ujs"
 import "./jquery_ui"
+//import "@fortawesome/fontawesome-free";
 
 $("#notice").fadeOut(4000)
 
 $("#alert").fadeOut(4000)
 
- $(document).on('click', '.nav-list', function () {
-                $(this).addClass("active").siblings().removeClass("active")
-                 console.log("You Clicked Me")
-                  $(".active").css({"color": "black", "font-size": "200%"}); 
-            })
+ 
+
+
+  
+      
+ $(document).on('click', '.sidebar ul li ', function () {
+            console.log($(this))
+          $(".sidebar ul li").removeClass("active");
+          $(this).closest("li").addClass("active");
+      });    

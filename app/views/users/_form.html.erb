@@ -1,50 +1,52 @@
  
 
+ <div class="registration-container">
+      <div class="login-logo">
+         <a href="#" class=""><%= image_tag "sf-logo.png" %></a>
+      </div>
+      <div class="registration-wrapper">
+        <p class="text-center"></p>
+        <%= form_with model: @user, class: "user" do |f| %>
+          <h1 class="text-center"><%= @user.new_record? ? "Create Account!" : "Edit Profile" %></h1>
+          <div class="input-box">
+            <%= f.text_field :name, placeholder: "Name", required: true %>
+            
+            <i class="fa-solid fa-user"></i>
+          </div>
+          <div class="input-box">
+            <%= f.email_field :email, class: "", placeholder: "Email Address", required: true %>                       
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <div class="input-box">
+           <%= f.password_field :password, class: " ", placeholder: "Password", required: true %>
+            <i class="fa-solid fa-lock"></i>
+          </div>
 
-<div class="d-flex justify-content-center align-items-center mt-5 " >
-  <div class = "border-0 shadow p-5" style="width: 100%; max-width: 500px;">  
-    
-    <div class="text-center">
-    
-      <h1 class="h4 text-gray-900 mb-4"><%= @user.new_record? ? "Create Account!" : "Edit Profile" %></h1>
-    </div>
-    <%= form_with model: @user, class: "user" do |f| %>
-      <div class="form-group ">
-        <%= f.text_field :name, class: "form-control form-control-user", placeholder: "Name", required: true %>
+          <div class="input-box">
+              <%= f.password_field :password_confirmation, class: " ", placeholder: "Repeat Password", required: true %>
+            <i class="fa-solid fa-lock"></i>
+          </div>
+          <%= f.submit(@user.new_record? ? "Sign Up" : "Edit Profile", class: "btn") %> 
+            <% end %>
+          
+           <% if @user.new_record? %>
+     <div class="register-link">
+     <p>Already have an account?  <%= link_to "Login!", :login, class: "small" %> </p>
       </div>
-      <div class="form-group">
-        <%= f.email_field :email, class: "form-control form-control-user", placeholder: "Email Address", required: true %>                       
-      </div>
-      <div class="form-group row">
-        <div class="col-sm-6 mb-3 mb-sm-0">
-          <%= f.password_field :password, class: "form-control form-control-user", placeholder: "Password", required: true %>
-        </div>
-        <div class="col-sm-6">
-          <%= f.password_field :password_confirmation, class: "form-control form-control-user", placeholder: "Repeat Password", required: true %>
-        </div>
-      </div>
-     
-     <%= f.submit(@user.new_record? ? "Sign Up" : "Edit Profile", class: "btn btn-primary btn-user btn-block") %> 
     <% end %>
-    <hr>
-    <% if @user.new_record? %>
-     <div class="text-center">
-       <%= link_to "Already have an account? Login!", :login, class: "small" %>
-    </div>
-    <% end %>
-    <% if @user.errors.any? %>
-      <div class="alert alert-danger mt-5" role="alert">
+             <% if @user.errors.any? %>
+      <div>
         <ul>
           <% @user.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>
           <% end %>
         </ul>
-      </div>
+      </div>r
     <% end %>
-   </div>
-</div>
-
-
+          </div>
+     
+      </div>
+    </div>
   
 
   

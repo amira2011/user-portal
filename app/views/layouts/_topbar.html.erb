@@ -1,34 +1,18 @@
-<!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                    <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
-
-                    <!-- Topbar Search -->
-                   
-
-<%= form_tag(leads_path, method: :get, class: "d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search") do %>
-      <div >
-     <%= text_field_tag :value, params[:value], class: "form-control bg-light border-0 small" %>
-       <%= submit_tag "Search", class: "btn btn-primary    mx-1" %>
-  </div>
-<% end %>
-
-    <div id="nav">
-    <% if current_user %>
-      <%= link_to "Edit Profile", edit_user_path(current_user.id) %>
-      <%= link_to "Logout", :logout, method: :post %>
-    <% else %>
-      <%= link_to "Register", new_user_path %> |
-      <%= link_to "Login", :login %>
-    <% end %>
-  </div>
-
-                 
-
-                </nav>
-                <!-- End of Topbar -->
-
+ <div class="header-wrapper">
+        <div class="header-title">
+          <span> Primary </span>
+          <h2>Dashboard</h2>
+        </div>
+        <div class="user-info">
+          <div>
+            <%= form_tag(leads_path, method: :get, class: "") do %>
+              <%= text_field_tag :value, params[:value], class: "input-search" %>
+              <%= submit_tag "Search", class: "btn btn-primary" %>
+            <% end %>
+          </div>
+          <%= image_tag "icon.jpeg" %>
+          
+        </div>
+</div>
                 

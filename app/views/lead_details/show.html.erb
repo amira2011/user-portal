@@ -1,34 +1,94 @@
  
+
 <!-- Content Row -->
-<div class="row" data-controller="lead">
-   
-     <div class="card shadow m-4">
-      <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Lead Details</h6>
-        
-      </div>
-       <div class="card-header py-3">
-       <%= link_to "All Leads", leads_path %>
-       </div>
-      <div class="card-body">
-        <div class="table-responsive">
-        <table class="table table-bordered table-hover text-nowrap "  id="dataTable"  width="90%" cellspacing="0">
- 
-            
-            <tbody>
-              <% @names.each do |column| %>
-              <tr>
-                <td><%= column %></td>
-                <td><%= @lead_detail[column] %></td>
-                 
-              </tr>
-              <% end %>   
-            </tbody>
-          </table>
-            
-        </div>
-      </div>
-   </div>
+
+<div class="container-fluid  ">
+  <div class="row border ">
+    <div class="col-md-3 p-5    ">
+        <div class="container1 bg-light ">
+  <div class="row border">
+    <div class="col-12">
+      <h2>James</h2>
+    </div>
+  </div>
+  <div class="row border">
+    <div class="col-12">
+      <div class="label">Phone</div>
+      <div class="value">251</div>
+    </div>
+  </div>
+  <div class="row border">
+    <div class="col-12">
+      <div class="label">Email</div>
+      <div class="value">Dolly</div>
+    </div>
+  </div>
+  <!-- Repeat the pattern for each label-value pair -->
+  <div class="row border">
+    <div class="col-12">
+      <div class="label">Address</div>
+      <div class="value">23859</div>
+    </div>
+  </div>
+  <div class="row border">
+    <div class="col-12">
+      <div class="label">Type</div>
+      <div class="value">Auto</div>
+    </div>
+  </div>
+  <div class="row border">
+    <div class="col-12">
+      <div class="label">Campaign</div>
+      <div class="value">Beacon</div>
+    </div>
+  </div>
+  <div class="row border">
+    <div class="col-12">
+      <div class="label">Lead Received</div>
+      <div class="value">02/22/2024 05:39 PM</div>
+    </div>
+  </div>
+  <div class="row border">
+    <div class="col-12">
+      <div class="label">Cost</div>
+      <div class="value">$1.50</div>
+    </div>
+  </div>
 </div>
-<!-- Content Row -->
- 
+    </div>
+    <div class="col-md-9  p-5">
+       <!-- Nav tabs -->
+  <ul class="nav nav-pills">
+    <li class="nav-item  me-2">
+      <a class="nav-link active" data-bs-toggle="tab" href="#drivers">Drivers</a>
+    </li>
+    <li class="nav-item  me-2" >
+      <a class="nav-link" data-bs-toggle="tab" href="#vehicles">Vehicles</a>
+    </li>
+     
+    <li class="nav-item  me-2 ">
+      <a class="nav-link" data-bs-toggle="tab" href="#violations">Violations</a>
+    </li>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content bg-light mt-5">
+    <div id="drivers" class="container tab-pane active"><br>
+      <h3>Primary Driver</h3>
+      <p>Primary driver information goes here...</p>
+      <button type="button" class="btn btn-primary">Edit</button>
+    </div>
+    <div id="vehicles" class="container tab-pane fade"><br>
+      <h3>Vehicles</h3>
+      <p>Vehicle information goes here...</p>
+    </div>
+     
+    <div id="violations" class="container tab-pane fade"><br>
+      <h3>Violations</h3>
+      <p>Violation information goes here...</p>
+    </div>
+  </div>
+    </div>
+    
+  </div>
+</div>

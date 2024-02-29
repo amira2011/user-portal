@@ -15,8 +15,8 @@ body {
 
 .login-container {
   position: absolute; /* Position the element absolutely relative to its first positioned (not static) ancestor */
-  top: 30%; /* Position the top edge of the element in the middle of the screen */
-  left: 50%; /* Position the left edge of the element in the middle of the screen */
+  top: 30%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 .login-logo {
@@ -100,8 +100,8 @@ body {
 
 .registration-container {
   position: absolute; /* Position the element absolutely relative to its first positioned (not static) ancestor */
-  top: 40%; /* Position the top edge of the element in the middle of the screen */
-  left: 50%; /* Position the left edge of the element in the middle of the screen */
+  top: 40%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 
@@ -129,7 +129,7 @@ body {
   border-radius: 40px;
   font-size: 16px;
   padding: 20px 45px 20px 20px;
-  transition: border 0.1s ease; /* Add a transition effect for the border */
+  transition: border 0.1s ease;
 }
 
 .registration-wrapper .input-box input:focus {

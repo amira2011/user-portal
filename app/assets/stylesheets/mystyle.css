@@ -55,19 +55,6 @@ body {
   padding: 20px 45px 20px 20px;
   transition: border 0.1s ease; /* Add a transition effect for the border */
 }
-.input-search {
-  height: 40px;
-  border: 1px solid rgba(117, 62, 162, 0.59);
-  border-radius: 40px;
-  transition: border 0.1s ease;
-  padding: 0.375rem 0.75rem;
-  transition: border 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-}
-
-.input-search:focus {
-  outline: none;
-  border: 2px solid #241983; /* Change to your preferred color */
-}
 
 .login-wrapper .input-box input:focus {
   border: 2px solid rgba(202, 148, 148, 1);
@@ -355,9 +342,9 @@ body {
   font-weight: 200;
 }
 .value {
-  font-size: 16px;
+  font-size: 24px;
   font-family: "Courier New", Courier, monospace;
-  font-weight: 400;
+  font-weight: 600;
 }
 .icon {
   color: #fff;
@@ -442,12 +429,103 @@ tr:nth-child(even) {
   cursor: pointer;
 }
 
-.label {
+.lead-details-container {
+  width: 100%;
+  padding: 5px;
+}
+
+.lead-details-header {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.lead-details-header i {
+  font-size: 2rem;
+  color: pink;
+  margin-right: 0.5rem;
+}
+
+.lead-details-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: black;
+}
+.lead-details {
+  display: flex;
+  margin-top: 24px;
+}
+
+.lead-container {
+  width: 360px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-right: 50px;
+}
+
+.lead {
+  padding: 10px 10px 10px 20px;
+  border-bottom: 1px solid rgba(199, 199, 199, 0.51);
+}
+.lead h2 {
+  font-weight: 700;
+}
+.lead .label {
+  font-size: 18px;
+  font-weight: 600;
+}
+.lead .value1 {
+  font-size: 16px;
+}
+
+.lead-nav-pill .nav-link.active {
+  border-radius: 30px;
+}
+.lead-tab-content {
+  width: 100%;
+}
+
+.driver-details-container {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.driver-details-header {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+}
+.driver-details-header h5 i {
+  margin-right: 5px;
+}
+.driver-details-header h5 {
+  margin-right: 15px;
+}
+
+.info-row {
+  border-bottom: 1px solid #dee2e6;
+  padding: 8px 0;
+}
+
+.edit-link {
+  text-decoration: none;
+  color: #d63384; /* Bootstrap pink color */
+  margin-left: 8px;
+}
+
+.edit-link:hover {
+  text-decoration: underline;
+}
+
+.add-driver {
+  display: block;
+  padding: 8px 0;
+  color: #d63384; /* Bootstrap pink color */
   font-weight: bold;
+  text-decoration: none;
 }
-.value {
-  margin-bottom: 1rem; /* Adds space below the value for separation */
-}
-.container1 {
-  max-width: 400px; /* Adjust the width as needed */
+
+.add-driver:hover {
+  text-decoration: underline;
 }

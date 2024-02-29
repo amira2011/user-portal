@@ -12,7 +12,9 @@ $("#notice").fadeOut(4000)
 
 $("#alert").fadeOut(4000)
 
+
  
+
 
 
   
@@ -22,3 +24,6 @@ $("#alert").fadeOut(4000)
           $(".sidebar ul li").removeClass("active");
           $(this).closest("li").addClass("active");
       });    
+
+
+ 

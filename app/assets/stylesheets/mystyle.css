@@ -531,7 +531,7 @@ tr:nth-child(even) {
 .add-driver {
   display: block;
   padding: 8px 0;
-  color: #d63384; /* Bootstrap pink color */
+  color: #d63384;
   font-weight: bold;
   text-decoration: none;
 }
@@ -541,42 +541,37 @@ tr:nth-child(even) {
 }
 
 .input-search {
-  width: 200px; /* Set width as needed */
+  width: 200px;
 
   border: 1px solid #ccc; /* Add border */
   border-radius: 5px; /* Add border radius */
 }
 
-/* Style for the user info container */
 .user-info {
-  display: flex; /* Use flexbox */
-  align-items: center; /* Center items vertically */
+  display: flex;
+  align-items: center;
 }
 
-/* Style for the search input field */
 .input-search {
   line-height: 2rem;
-  border: 1px solid #ccc; /* Add border */
+  border: 1px solid #ccc;
   padding-left: 15px;
-  border-radius: 15px; /* Add border radius to top left */
+  border-radius: 15px;
 }
 
-/* Style for the search button */
 .input-search-btn {
-  background-color: #007bff; /* Set background color */
-  color: #fff; /* Set text color */
-  border: 1px solid #007bff; /* Add border */
+  background-color: #007bff;
+  color: #fff;
+  border: 1px solid #007bff;
 
-  cursor: pointer; /* Add cursor pointer */
-  border-radius: 15px; /* Add border radius to top left */
+  cursor: pointer;
+  border-radius: 15px;
 }
 
-/* Style for the search button icon */
 .input-search-btn i {
-  margin-right: 5px; /* Adjust margin as needed */
+  margin-right: 5px;
 }
 
-/* Hover effect for the search button */
 .input-search-btn:hover {
-  background-color: #0056b3; /* Change background color on hover */
+  background-color: #0056b3;
 }

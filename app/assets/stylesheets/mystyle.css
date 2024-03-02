@@ -539,3 +539,44 @@ tr:nth-child(even) {
 .add-driver:hover {
   text-decoration: underline;
 }
+
+.input-search {
+  width: 200px; /* Set width as needed */
+
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 5px; /* Add border radius */
+}
+
+/* Style for the user info container */
+.user-info {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center items vertically */
+}
+
+/* Style for the search input field */
+.input-search {
+  line-height: 2rem;
+  border: 1px solid #ccc; /* Add border */
+  padding-left: 15px;
+  border-radius: 15px; /* Add border radius to top left */
+}
+
+/* Style for the search button */
+.input-search-btn {
+  background-color: #007bff; /* Set background color */
+  color: #fff; /* Set text color */
+  border: 1px solid #007bff; /* Add border */
+
+  cursor: pointer; /* Add cursor pointer */
+  border-radius: 15px; /* Add border radius to top left */
+}
+
+/* Style for the search button icon */
+.input-search-btn i {
+  margin-right: 5px; /* Adjust margin as needed */
+}
+
+/* Hover effect for the search button */
+.input-search-btn:hover {
+  background-color: #0056b3; /* Change background color on hover */
+}

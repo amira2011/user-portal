@@ -1,20 +1,33 @@
 
  <div class="header-wrapper">
         <div class="header-title">
-          <span> Primary </span>
-          <h2>Dashboard</h2>
+           <h2>Dashboard</h2>
         </div>
-        <div class="user-info">
-          <div>
+        <div class="d-flex user-search  ">
+       
             <%= form_tag(leads_path, method: :get, class: "") do %>
-  <%= text_field_tag :value, params[:value], class: "input-search" %>
-  <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-    <i class="fas fa-search"></i> 
-  <% end %>
-<% end %>
-          </div>
-          <%= image_tag "icon.jpeg" %>
+              <%= text_field_tag :value, params[:value], class: "input-search  " %>
+              <%= button_tag(type: "submit", class: "btn btn-primary input-search-btn ") do %>
+                <i class="fas fa-search"></i> 
+              <% end %>
+            <% end %>
           
-        </div>
-</div>
+        </div>  
+           
+          <div class="user-info">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <%= current_user.email %>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                <li>
+                  <%= link_to :logout, class: "dropdown-item", method: :post do %>
+                    <i class="fas fa-user"></i> <span>Logout</span>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </div>       
+   </div>
+
                 

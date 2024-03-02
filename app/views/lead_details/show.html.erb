@@ -86,9 +86,9 @@
           id="drivers"
           class="container-fluid tab-pane active driver-details-container"
         >
-          <div class="driver-details-container">
-            <% @lead_drivers.each do |driver| %>
-            <header class="driver-details-header mt-2">
+          <% @lead_drivers.each do |driver| %>
+          <div class="driver-container">
+            <header class="d-flex driver-details-header mt-2">
               <h5>
                 <span class="fas fa-user"></span> <%= "#{driver.first_name}
                 #{driver.last_name}" %>
@@ -127,21 +127,106 @@
                 </div>
               </div>
             </div>
-            <% end %>
-            <a href="#" class="add-driver">+ Add Driver</a>
           </div>
+          <% end %>
+          <a href="#" class="add-driver">+ Add Driver</a>
         </div>
 
-        <div id="vehicles" class="container tab-pane fade">
-          <br />
-          <h3>Vehicles</h3>
-          <p>Vehicle information goes here...</p>
+        <div
+          id="vehicles"
+          class="container-fluid tab-pane fade vehicle-details-container"
+        >
+          <% @lead_vehicles.each do |vehicle| %>
+          <div class="vehicle-container">
+            <header class="d-flex vehicle-details-header mt-2">
+              <h5><span class="fas fa-car"></span> Vehicle Details</h5>
+              <a href="#" class="edit-link">Edit</a>
+            </header>
+            <div class="row g-0">
+              <div class="col-md-4">
+                <div class="info-row">
+                  <strong>Year</strong><br />
+                  <%= vehicle.year %>
+                </div>
+                <div class="info-row">
+                  <strong>Make</strong><br />
+                  <%= vehicle.make %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="info-row">
+                  <strong>Model</strong><br />
+                  <%= vehicle.model %>
+                </div>
+                <div class="info-row">
+                  <strong>Submodel</strong><br />
+                  <%= vehicle.submodel %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="info-row">
+                  <strong>VIN</strong><br />
+                  <%= vehicle.vin %>
+                </div>
+                <div class="info-row">
+                  <strong>Alarm</strong><br />
+                  <%= vehicle.alarm ? 'Yes' : 'No' %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+          <a href="#" class="add-vehicle">+ Add Vehicle</a>
         </div>
 
-        <div id="violations" class="container tab-pane fade">
-          <br />
-          <h3>Violations</h3>
-          <p>Violation information goes here...</p>
+        <div
+          id="violations"
+          class="container-fluid tab-pane fade violation-details-container"
+        >
+          <% @lead_violations.each do |violation| %>
+          <div class="violation-container">
+            <header class="d-flex violation-details-header mt-2">
+              <h5>
+                <span class="fas fa-exclamation-triangle"></span> Violation
+                Details
+              </h5>
+              <a href="#" class="edit-link">Edit</a>
+            </header>
+            <div class="row g-0">
+              <div class="col-md-4">
+                <div class="info-row">
+                  <strong>Violation Type</strong><br />
+                  <%= violation.violation_type %>
+                </div>
+                <div class="info-row">
+                  <strong>Incident Date</strong><br />
+                  <%= violation.incident_date.strftime("%d/%m/%Y") %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="info-row">
+                  <strong>Description</strong><br />
+                  <%= violation.description %>
+                </div>
+                <div class="info-row">
+                  <strong>What Damaged</strong><br />
+                  <%= violation.what_damaged %>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="info-row">
+                  <strong>Accident at Fault</strong><br />
+                  <%= violation.accident_at_fault ? 'Yes' : 'No' %>
+                </div>
+                <div class="info-row">
+                  <strong>Claim at Fault</strong><br />
+                  <%= violation.claim_at_fault ? 'Yes' : 'No' %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+          <a href="#" class="add-violation">+ Add Violation</a>
         </div>
       </div>
     </div>

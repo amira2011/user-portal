@@ -12,5 +12,6 @@ class LeadDetailsController < ApplicationController
     @lead_detail = @lead.lead_detail
     @lead_drivers = @lead.lead_drivers
     @lead_vehicles = @lead.lead_vehicles
+    @lead_violations = @lead.lead_violations
   end
 end

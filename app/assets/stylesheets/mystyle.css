@@ -485,19 +485,23 @@ tr:nth-child(even) {
   width: 100%;
 }
 
-.driver-details-container {
+.driver-details-container,
+.vehicle-details-container,
+.violation-details-container {
   background: #f8f9fa;
   padding: 20px;
-  border-radius: 20px;
   margin-top: 1rem;
+  margin-bottom: 2rem;
 }
-.vehicle-details-container {
-  background: #f8f9fa;
-  padding: 20px;
-  border-radius: 20px;
-  margin-top: 1rem;
+.driver-container,
+.vehicle-container,
+.violation-container {
+  margin: 5px;
+  padding: 10px;
 }
-.driver-details-header {
+
+.driver-details-header,
+.vehicle-details-header {
   padding-bottom: 25px;
   border-bottom: 1px solid #dee2e6;
   display: flex;

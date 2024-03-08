@@ -1,51 +1,56 @@
- <div class="registration-container">
-      
-      <div class="registration-wrapper">
-        <p class="text-center"></p>
-        <%= form_with model: @user, class: "user" do |f| %>
-          <h1 class="text-center"><%= @user.new_record? ? "Create Account!" : "Edit Profile" %></h1>
-          <div class="input-box">
-            <%= f.text_field :name, placeholder: "Name", required: true %>
-            
-            <i class="fa-solid fa-user"></i>
-          </div>
-          <div class="input-box">
-            <%= f.email_field :email, class: "", placeholder: "Email Address", required: true %>                       
-            <i class="fa-solid fa-envelope"></i>
-          </div>
-          <div class="input-box">
-           <%= f.password_field :password, class: " ", placeholder: "Password", required: true %>
-            <i class="fa-solid fa-lock"></i>
-          </div>
-
-          <div class="input-box">
-              <%= f.password_field :password_confirmation, class: " ", placeholder: "Repeat Password", required: true %>
-            <i class="fa-solid fa-lock"></i>
-          </div>
-          <%= f.submit(@user.new_record? ? "Sign Up" : "Edit Profile", class: "btn") %> 
-            <% end %>
-          
-           <% if @user.new_record? %>
-     <div class="register-link">
-     <p>Already have an account?  <%= link_to "Login!", :login, class: "small" %> </p>
-      </div>
-    <% end %>
-             <% if @user.errors.any? %>
-      <div>
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>r
-    <% end %>
-          </div>
-     
-      </div>
-    </div>
-  
 
   
   
+<div class="content">
+            <div class="content-header">
+              <div class="content-title">
+                <span>Edit Profile</span>
+                <i class="fa-solid fa-link"></i>
+              </div>
+            </div>
 
+            <div class="profile-container">
+              <div class="profile-wrapper">
+                <div class="profile-photo">
+                  <div class="profile-img">
+                    <%= image_tag("user.jpg", alt: "Profile Photo") %>
+                  </div>
+
+                  <button class= "btn btn-primary">Upload new photo</button>
+                </div>
+                <div class="profile-info">
+                  <h4 class="text-center" style="color: #2c9ce5ff">
+                    Profile informations
+                  </h4>
+                 <%= form_with model: @user, class: "user" do |f| %>
+                    <div class="input-group">
+                    <%= f.text_field :name, placeholder: "Name", required: true %>
+                      
+                    </div>
+                    <div class="input-group">
+                      <%= f.email_field :email, class: "", placeholder: "Email Address", required: true %>   
+                    </div>
+                    <div class="input-group">
+                      <%= f.password_field :password, class: " ", placeholder: "Password", required: true %>
+                    </div>
+                    <div class="input-group">
+                      <%= f.password_field :password_confirmation, class: " ", placeholder: "Repeat Password", required: true %>
+                    </div>
+                    
+                   <%= f.submit(@user.new_record? ? "Sign Up" : "Edit Profile", class: "btn btn-primary") %> 
+                  <% end %>
+                   <% if @user.errors.any? %>
+                  <div>
+                     <ul>
+                        <% @user.errors.full_messages.each do |msg| %>
+                          <li><%= msg %></li>
+                        <% end %>
+                     </ul>
+                  </div>
+                    <% end %>
+                   
+                </div>
+              </div>
+            </div>
+          </div>
   

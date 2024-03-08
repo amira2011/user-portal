@@ -1,6 +1,6 @@
 
  
-
+  <div data-controller="hello">
            <div class="logo">
                  <%= image_tag "logo1.png", class: "img-fluid" %>
            
@@ -13,10 +13,11 @@
                 <% end %>
               </li>
 
-              <li>
-                <a href="#">
-                  <i class="fas fa-chart-bar"></i> <span> Statistics</span>
-                </a>
+              <li class="">
+             
+                <%= link_to edit_user_path(current_user.id), data: { turbolinks: false } do %>
+                  <i class="fas fa-user"></i> <span> Edit Profile</span>
+              <% end %>
               </li>
               <li>
                 <a href="#">
@@ -40,4 +41,4 @@
               </li>
             </ul>
           </div>
- 
+   </div>

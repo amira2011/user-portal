@@ -1000,9 +1000,24 @@ body {
   font-size: 16px;
 }
 
-.lead-nav-pill .nav-link.active {
+.lead-nav-pill .nav-item .nav-link {
+  text-decoration: none;
+  background-color: #bbbbbb;
   border-radius: 30px;
 }
+
+.nav-item .nav-link {
+  background-color: lightgrey; /* Light grey background for non-active links */
+  border-radius: 30px; /* Rounded corners with a 30px radius */
+  color: black; /* Text color for non-active links - adjust as needed */
+  margin-right: 8px; /* Optional: to ensure some spacing between the tabs */
+}
+
+.nav-item .nav-link.active {
+  background-color: blue; /* Blue background for the active link */
+  color: white; /* Text color for the active link - adjust as needed */
+}
+
 .lead-tab-content {
   width: 100%;
 }

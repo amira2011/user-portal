@@ -1,3 +1,4 @@
+   <div class="content">
 <div class="lead-details-container">
   <div class="lead-details-header d-flex align-items-center">
     <i class="fas fa-arrow-left me-2"></i>
@@ -91,7 +92,7 @@
             <header class="d-flex driver-details-header mt-2">
               <h5>
                 <span class="fas fa-user"></span> <%= "#{driver.first_name}
-                #{driver.last_name}" %>
+                                                                                                                                                                                  #{driver.last_name}" %>
               </h5>
               <a href="#" class="edit-link">Edit</a>
             </header>
@@ -170,7 +171,7 @@
                 </div>
                 <div class="info-row">
                   <strong>Alarm</strong><br />
-                  <%= vehicle.alarm ? 'Yes' : 'No' %>
+                  <%= vehicle.alarm ? "Yes" : "No" %>
                 </div>
               </div>
             </div>
@@ -216,11 +217,11 @@
               <div class="col-md-4">
                 <div class="info-row">
                   <strong>Accident at Fault</strong><br />
-                  <%= violation.accident_at_fault ? 'Yes' : 'No' %>
+                  <%= violation.accident_at_fault ? "Yes" : "No" %>
                 </div>
                 <div class="info-row">
                   <strong>Claim at Fault</strong><br />
-                  <%= violation.claim_at_fault ? 'Yes' : 'No' %>
+                  <%= violation.claim_at_fault ? "Yes" : "No" %>
                 </div>
               </div>
             </div>
@@ -231,4 +232,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>

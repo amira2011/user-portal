@@ -19,10 +19,12 @@ $("#alert").fadeOut(4000)
 
   
       
- $(document).on('click', '.sidebar ul li ', function () {
+ $(document).on('click', '.nav-menu .menu li ', function () {
             console.log($(this))
-          $(".sidebar ul li").removeClass("active");
-          $(this).closest("li").addClass("active");
+           $('.nav-menu .menu li').removeClass('active');
+      
+    
+      $(this).addClass('active');
       });    
 
 

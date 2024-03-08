@@ -8,8 +8,7 @@
         <a href="#" class=""><%= image_tag "sf-logo.png" %></a>
       </div>
       <div class="login-wrapper">
-       <p id="notice" style="text-align: center; color: red"><%= flash[:notice] %></p>
-        <p id="alert"style="text-align: center; color: red"><%= flash[:alert] %></p>
+       
         <%= form_with url: login_path, method: :post, novalidate: true do |f| %>
         
           <h2 class="text-center">Login!</h2>
@@ -26,6 +25,8 @@
              <% end %>
           <div class="register-link">
             <p>Don't have account? <%= link_to "Create an Account!", new_user_path %> </p>
+            <p id="notice" style="text-align: center; color: red"><%= flash[:notice] %></p>
+             <p id="alert"style="text-align: center; color: red"><%= flash[:alert] %></p>
           </div>
         </form>
       </div>

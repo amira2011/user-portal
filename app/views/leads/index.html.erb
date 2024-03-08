@@ -1,37 +1,43 @@
 
 
 
-<div class="table-wrapper">
-        <h3 class="card-title" style="font-size: 24px; font-weight: 600; color: var(--bs-heading-color);">Leads Data</h3>
-        <div class="table-container">
-          <table>
-            <thead>
-              <tr>
-                <th> Name </th>
-                <th> Email </th>
-                <th> Phone </th>
-                <th> Address </th>
-                <th> City </th>
-                 <th> State </th>
-                <th> Zip </th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @leads.each_with_index do |lead, idx| %>
-              <tr>
-                
-                <td> <%= link_to "#{lead.contact}", lead_detail_path(lead.id), class: "btn btn-link " %> </td>
+      <div class="content">
+            <div class="content-header">
+              <div class="content-title">
+                <span>Leads</span>
+                <i class="fa-solid fa-link"></i>
+              </div>
+              <div class="content-customise">
+                <i class="fa-solid fa-table"></i>
+                <a href="">Customise Columns</a>
+              </div>
+            </div>
+            <div class="content-table table-responsive">
+              <table class="leads-table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @leads.each_with_index do |lead, idx| %>
+                  <tr>
+                    <td> <%= link_to "#{lead.contact}", lead_detail_path(lead.id), class: "btn btn-link " %> </td>
                 <td><%= lead.email %></td>
                 <td><%= lead.phone %></td>
                 <td><%= lead.complete_address %></td>
                 <td><%= lead.city %></td>
                 <td><%= lead.state %></td>
                 <td><%= lead.zip %></td>
-              </tr>
-                <% end %>   
-               
-            </tbody>
-          </table>
-          <%= paginate @leads, theme: "bootstrap-5" %>  
-        </div>
-      </div>
+                  </tr>
+                   <% end %>   
+                  </tbody>
+              </table>
+            </div>
+          </div>

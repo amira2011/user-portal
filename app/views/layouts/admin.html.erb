@@ -22,17 +22,21 @@
 
   <body>
  
-    <%= render "layouts/sidebar" %>
-    <!-- Main-Content -->
-  <div class="main-content">
-      <%= render "layouts/topbar" %>
-    <p id="notice"><%= flash[:notice] %></p>
-    <p id="alert"><%= flash[:alert] %></p>
-
-        <%= yield %>
-
+  <div class="container-fluid">
+      <div class="wrapper">
+       <div class="side-bar">
+         <%= render "layouts/sidebar" %>
+       </div>
+       <div class="main-content">
+        <%= render "layouts/topbar" %>
+          <%= yield %>
+       </div>
+      </div>
   </div>
- <!-- Main-Content -->
+
+
+  
+   
      
   </body>
 </html>

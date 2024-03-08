@@ -29,7 +29,11 @@
                 class="dropdown-menu email-dropdown-menu dropdown-menu-left"
                 aria-labelledby="email-dropdownMenuLink"
               >
-                <li><a class="dropdown-item" href="#">Logout</a></li>
+                <li>
+                <%= link_to :logout, class: "dropdown-item", method: :post do %>
+                    <i class="fas fa-user"></i> <span>Logout</span>
+                  <% end %>
+                </li>
               </ul>
             </div>
           </div>

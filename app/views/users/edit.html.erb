@@ -13,16 +13,32 @@
               <div class="profile-wrapper">
                 <div class="profile-photo">
                   <div class="profile-img">
+                   <%= form_with model: @user, class: "user" do |f| %>
+                  <% if @user.profile_image.attached? %>
+                    <%= image_tag @user.profile_image, class: "user-profile-image" %>
+                   <% else %>
                     <%= image_tag("user.jpg", alt: "Profile Photo") %>
+                     <% end %>
                   </div>
 
-                  <button class= "btn btn-primary">Upload new photo</button>
+                <%= f.file_field :profile_image, class: "btn btn-primary" %>
                 </div>
                 <div class="profile-info">
                   <h4 class="text-center" style="color: #2c9ce5ff">
                     Profile informations
                   </h4>
-                 <%= form_with model: @user, class: "user" do |f| %>
+                
+                  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
                     <div class="input-group">
                     <%= f.text_field :name, placeholder: "Name", required: true %>
                       
@@ -31,23 +47,15 @@
                       <%= f.email_field :email, class: "", placeholder: "Email Address", required: true %>   
                     </div>
                     <div class="input-group">
-                      <%= f.password_field :password, class: " ", placeholder: "Password", required: true %>
+                      <%= f.password_field :password, class: " ", placeholder: "Password" %>
                     </div>
                     <div class="input-group">
-                      <%= f.password_field :password_confirmation, class: " ", placeholder: "Repeat Password", required: true %>
+                      <%= f.password_field :password_confirmation, class: " ", placeholder: "Repeat Password" %>
                     </div>
                     
                    <%= f.submit(@user.new_record? ? "Sign Up" : "Edit Profile", class: "btn btn-primary") %> 
                   <% end %>
-                   <% if @user.errors.any? %>
-                  <div>
-                     <ul>
-                        <% @user.errors.full_messages.each do |msg| %>
-                          <li><%= msg %></li>
-                        <% end %>
-                     </ul>
-                  </div>
-                    <% end %>
+                  
                    
                 </div>
               </div>

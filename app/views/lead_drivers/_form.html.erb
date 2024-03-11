@@ -11,19 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, id: :lead_driver_first_name %>
-  </div>
+ 
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, id: :lead_driver_last_name %>
-  </div>
+  <div class="mb-3">
+  <%= form.label :first_name, class: "form-label" %>
+  <%= form.text_field :first_name, id: :lead_driver_first_name, class: "form-control" %>
+</div>
 
-  <!-- Add more fields as necessary -->
+<div class="mb-3">
+  <%= form.label :last_name, class: "form-label" %>
+  <%= form.text_field :last_name, id: :lead_driver_last_name, class: "form-control" %>
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
+ <div class="mb-3">
+    <%= form.label :marital_status, class: "form-label" %>
+    <%= form.select :marital_status,
+                    ["Single", "Married", "Divorced", "Separated", "Widowed", "Domestic Partner", "Unknown"],
+                    { prompt: "Select Marital Status" },
+                    { class: "form-select" } %>
+  </div
+ 
+  <div class="actions ">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>

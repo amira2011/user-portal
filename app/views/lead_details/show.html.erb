@@ -92,7 +92,7 @@
             <header class="d-flex driver-details-header mt-2">
               <h5>
                 <span class="fas fa-user"></span> <%= "#{driver.first_name}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          #{driver.last_name}" %>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            #{driver.last_name}" %>
               </h5>
                <%= link_to "Edit", edit_lead_driver_path(driver), class: "edit-link", "data-bs-toggle": "modal", "data-bs-target": "#editDriverModal", remote: true %>
             </header>
@@ -241,11 +241,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="editDriverModalLabel">Edit Driver</h5>
-        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+        <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body p-3">
       <div>Welcome to Modal</div>
         <!-- Content will be loaded dynamically -->
       </div>

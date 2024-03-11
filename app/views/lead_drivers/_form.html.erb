@@ -1,0 +1,29 @@
+<%= form_with(model: @lead_driver, local: true) do |form| %>
+  <% if @lead_driver.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@lead_driver.errors.count, "error") %> prohibited this lead_driver from being saved:</h2>
+
+      <ul>
+      <% @lead_driver.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :lead_driver_first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :lead_driver_last_name %>
+  </div>
+
+  <!-- Add more fields as necessary -->
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

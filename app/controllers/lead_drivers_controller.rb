@@ -1,6 +1,6 @@
 class LeadDriversController < ApplicationController
   layout "admin"
-  #   before_action :require_login
+  before_action :require_login
 
   def edit
     @lead_driver = LeadDriver.find(params[:id])

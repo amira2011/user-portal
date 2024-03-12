@@ -1,4 +1,5 @@
-<%= form_with(model: @lead_driver, local: true) do |form| %>
+<%= form_with(model: [@lead, @lead_driver], local: true) do |form| %>
+    
   <% if @lead_driver.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@lead_driver.errors.count, "error") %> prohibited this lead_driver from being saved:</h2>

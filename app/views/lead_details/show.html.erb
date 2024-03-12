@@ -92,9 +92,9 @@
             <header class="d-flex driver-details-header mt-2">
               <h5>
                 <span class="fas fa-user"></span> <%= "#{driver.first_name}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            #{driver.last_name}" %>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              #{driver.last_name}" %>
               </h5>
-               <%= link_to "Edit", edit_lead_driver_path(driver), class: "edit-link", "data-bs-toggle": "modal", "data-bs-target": "#editDriverModal", remote: true %>
+                 <%= link_to "Edit", edit_lead_lead_driver_path(@lead, driver), class: "edit-link", "data-bs-toggle": "modal", "data-bs-target": "#editDriverModal", remote: true %>
             </header>
             <div class="row g-0">
               <div class="col-md-4">
@@ -130,7 +130,8 @@
             </div>
           </div>
           <% end %>
-          <a href="#" class="add-driver">+ Add Driver</a>
+          <%= link_to "Add Driver", "#", remote: true, class: "add-driver" %>
+           
         </div>
 
         <div

@@ -32,7 +32,7 @@
                     { class: "form-select" } %>
   </div>
 
-   <div class="field">
+   <div class="mb-3">
     <%= form.label :birth_date %>
     <%= form.date_select :birth_date, start_year: Time.now.year - 100, end_year: Time.now.year, include_blank: true %>
   </div>

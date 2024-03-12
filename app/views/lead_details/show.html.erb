@@ -92,7 +92,7 @@
             <header class="d-flex driver-details-header mt-2">
               <h5>
                 <span class="fas fa-user"></span> <%= "#{driver.first_name}
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              #{driver.last_name}" %>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        #{driver.last_name}" %>
               </h5>
                  <%= link_to "Edit", edit_lead_lead_driver_path(@lead, driver), class: "edit-link", "data-bs-toggle": "modal", "data-bs-target": "#editDriverModal", remote: true %>
             </header>
@@ -110,7 +110,10 @@
               <div class="col-md-4">
                 <div class="info-row">
                   <strong>Date of Birth</strong><br />
-                  <%= driver.birth_date.strftime("%d/%m/%Y") %>
+
+                 <% if driver.birth_date.present? %>
+                     <%= driver.birth_date.strftime("%d/%m/%Y") %>
+                 <% end %>
                 </div>
                 <div class="info-row">
                   <strong>Marital Status</strong><br />
@@ -130,7 +133,7 @@
             </div>
           </div>
           <% end %>
-          <%= link_to "Add Driver", "#", remote: true, class: "add-driver" %>
+        <%= link_to "Add New Driver", new_lead_lead_driver_path(@lead), class: "btn btn-primary", 'data-bs-toggle': "modal", 'data-bs-target': "#newDriverModal", remote: true %>
            
         </div>
 
@@ -249,6 +252,23 @@
       <div class="modal-body p-3">
       <div>Welcome to Modal</div>
         <!-- Content will be loaded dynamically -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- New LeadDriver Modal Structure -->
+<div class="modal fade" id="newDriverModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">New Lead Driver</h5>
+        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Form will be injected here -->
       </div>
     </div>
   </div>

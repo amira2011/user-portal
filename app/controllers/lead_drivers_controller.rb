@@ -2,6 +2,27 @@ class LeadDriversController < ApplicationController
   layout "admin"
   before_action :require_login
 
+  def new
+    @lead = Lead.find(params[:lead_id])
+    @lead_driver = @lead.lead_drivers.build
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def create
+    @lead = Lead.find(params[:lead_id])
+    @lead_driver = @lead.lead_drivers.build(lead_driver_params)
+
+    respond_to do |format|
+      if @lead_driver.save
+        format.html { redirect_to lead_lead_driver_path(@lead, @lead_driver), notice: "Lead driver was successfully created." }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def edit
     @lead = Lead.find(params[:lead_id])
     @lead_driver = LeadDriver.find(params[:id])

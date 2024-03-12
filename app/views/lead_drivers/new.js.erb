@@ -1,0 +1,2 @@
+$("#newDriverModal .modal-body").html("<%= j(render("form", lead: @lead, lead_driver: LeadDriver.new)) %>");
+$("#newDriverModal").modal('show');

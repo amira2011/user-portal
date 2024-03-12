@@ -30,7 +30,12 @@
                     ["Single", "Married", "Divorced", "Separated", "Widowed", "Domestic Partner", "Unknown"],
                     { prompt: "Select Marital Status" },
                     { class: "form-select" } %>
-  </div
+  </div>
+
+   <div class="field">
+    <%= form.label :birth_date %>
+    <%= form.date_select :birth_date, start_year: Time.now.year - 100, end_year: Time.now.year, include_blank: true %>
+  </div>
  
   <div class="actions ">
     <%= form.submit class: "btn btn-primary" %>

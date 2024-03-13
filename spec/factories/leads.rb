@@ -8,7 +8,7 @@ FactoryBot.define do
     address2 { Faker::Address.secondary_address }
     city { Faker::Address.city }
     state { Faker::Address.state }
-    zip { Faker::Address.zip_code }
+    zip { "97404" }
     association :user
   end
 end

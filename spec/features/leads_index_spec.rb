@@ -16,7 +16,8 @@ RSpec.describe "Leads Index", type: :feature do
   end
 
   it "shows the lead for the logged in user" do
-    expect(page).to have_content("john")
+    expect(page).to have_content("john.doe@example.com")
+    expect(page).to have_content("97404")
   end
 end
 

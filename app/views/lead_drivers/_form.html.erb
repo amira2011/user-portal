@@ -34,9 +34,18 @@
 
    <div class="mb-3">
     <%= form.label :birth_date %>
-    <%= form.date_select :birth_date, start_year: Time.now.year - 100, end_year: Time.now.year, include_blank: true %>
+    <%= form.date_select :birth_date, start_year: Time.now.year - 50, end_year: Time.now.year, include_blank: true %>
   </div>
  
+
+   <div class="mb-3">
+    <%= form.label :relationship, class: "form-label" %>
+    <%= form.select :relationship,
+                    LeadDriver::VALID_RELATIONSHIPS.map { |relationship| [relationship.titleize, relationship] },
+                    { prompt: "Select Relationship" },
+                    { class: "form-select" } %>
+  </div>
+
   <div class="actions ">
     <%= form.submit class: "btn btn-primary" %>
   </div>

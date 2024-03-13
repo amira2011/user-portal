@@ -2,14 +2,13 @@
 require "rails_helper"
 
 RSpec.describe "Leads Index", type: :feature do
-  let(:user) { create(:user) } # Assuming you have a properly set up user factory.
+  let(:user) { create(:user) }
   let!(:lead) { create(:lead, user: user, first_name: "John", last_name: "Doe") }
 
   before do
-    # Log in as user
-    visit login_path # Uses named route :login
-    fill_in "Email", with: user.email
-    fill_in "Password", with: user.password
+    visit login_path
+    fill_in "email", with: user.email
+    fill_in "password", with: user.password
     click_button "Login"
     visit leads_path
   end

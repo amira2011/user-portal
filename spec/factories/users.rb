@@ -4,7 +4,7 @@ FactoryBot.define do
     # Assuming your User model has these attributes. Adjust as needed.
     name { "John Doe" }
     email { "john.doe@example.com" }
-    password { "12345" }
-    password_confirmation { "12345" }
+    password { "123456" }
+    password_confirmation { "123456" }
   end
 end

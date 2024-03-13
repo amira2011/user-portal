@@ -6,3 +6,4 @@ RSpec.describe Lead, type: :model do
     expect(lead).to be_valid
   end
 end
+# bundle exec rspec spec/models/lead_spec.rb

@@ -8,3 +8,5 @@ FactoryBot.define do
     password_confirmation { "123456" }
   end
 end
+
+# bundle exec rspec spec / models / user_spec.rb

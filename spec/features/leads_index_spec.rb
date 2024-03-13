@@ -7,6 +7,8 @@ RSpec.describe "Leads Index", type: :feature do
 
   before do
     visit login_path
+    puts "User email: #{user.email}"
+    puts "User password: #{user.password}"
     fill_in "email", with: user.email
     fill_in "password", with: user.password
     click_button "Login"
@@ -17,3 +19,5 @@ RSpec.describe "Leads Index", type: :feature do
     expect(page).to have_content("John Doe")
   end
 end
+
+# bundle exec rspec spec/features/leads_index_spec.rb

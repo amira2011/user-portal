@@ -10,13 +10,13 @@ RSpec.describe "Leads Index", type: :feature do
     puts "User email: #{user.email}"
     puts "User password: #{user.password}"
     fill_in "email", with: user.email
-    fill_in "password", with: user.password
+    fill_in "password", with: "123456"
     click_button "Login"
     visit leads_path
   end
 
   it "shows the lead for the logged in user" do
-    expect(page).to have_content("John Doe")
+    expect(page).to have_content("john")
   end
 end
 

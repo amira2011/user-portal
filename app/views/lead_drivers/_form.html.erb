@@ -1,4 +1,4 @@
-<%= form_with(model: [@lead, @lead_driver], local: true) do |form| %>
+  <%= form_with(model: [@lead, @lead_driver], local: true, html: { class: "row g-3" }) do |form| %>
     
   <% if @lead_driver.errors.any? %>
     <div id="error_explanation">
@@ -12,37 +12,39 @@
     </div>
   <% end %>
 
- 
+  
 
-  <div class="mb-3">
+ <div class="col-md-6">
   <%= form.label :first_name, class: "form-label" %>
   <%= form.text_field :first_name, id: :lead_driver_first_name, class: "form-control" %>
 </div>
 
-<div class="mb-3">
+ <div class="col-md-6">
   <%= form.label :last_name, class: "form-label" %>
   <%= form.text_field :last_name, id: :lead_driver_last_name, class: "form-control" %>
 </div>
 
-<div class="mb-3">
-    <%= form.label :relationship, class: "form-label" %>
+
+
+ <div class="col-4">
+    <%= form.label :gender, class: "form-label" %>
+    <%= form.select :gender,
+                    ["M", "F", "X"],
+                    { prompt: "Select gender" },
+                    { class: "form-select" } %>
+</div>
+
+<div class="col-4">
+      <%= form.label :relationship, class: "form-label" %>
     <%= form.select :relationship,
                     LeadDriver::VALID_RELATIONSHIPS.map { |relationship| [relationship.titleize, relationship] },
                     { prompt: "Select Relationship" },
                     { class: "form-select" } %>
 </div>
 
-<div class="mb-3">
-    <%= form.label :gender, class: "form-label" %>
-    <%= form.select :gender,
-                  ["M", "F", "X"],
-                    { prompt: "Select gender" },
-                    { class: "form-select" } %>
-</div>
-
  
 
- <div class="mb-3">
+  <div class="col-4">
     <%= form.label :marital_status, class: "form-label" %>
     <%= form.select :marital_status,
                     ["Single", "Married", "Divorced", "Separated", "Widowed", "Domestic Partner", "Unknown"],
@@ -50,15 +52,52 @@
                     { class: "form-select" } %>
   </div>
 
-   <div class="mb-3">
+  <div class="col-12">
     <%= form.label :birth_date %>
     <%= form.date_select :birth_date, start_year: Time.now.year - 50, end_year: Time.now.year, include_blank: true %>
   </div>
  
+<div class="col-md-6">
+  <%= form.label :first_licensed, "First Licensed Age", class: "form-label" %>
+  <%= form.number_field :first_licensed, id: :lead_driver_first_licensed, class: "form-control", min: 0 %>
+</div>
 
+<div class="col-md-6">
+  <%= form.label :bankruptcy, class: "form-label" %>
+  <div class="form-check">
+    <%= form.check_box :bankruptcy, id: :lead_driver_bankruptcy, class: "form-check-input" %>
+    <%= form.label :bankruptcy, "Filed for bankruptcy", class: "form-check-label" %>
+  </div>
+</div>
    
+
+<div class="col-4">
+      <%= form.label :education, class: "form-label" %>
+       <%= form.select :education,
+                       LeadDriver::VALID_EDUCATION.map { |edu| [edu.titleize, edu] },
+                       { prompt: "Select Education" },
+                       { class: "form-select" } %>
+</div>
+
+
+<div class="col-4">
+      <%= form.label :credit_rating, class: "form-label" %>
+       <%= form.select :credit_rating,
+                       LeadDriver::VALID_CREDIT_RATING.map { |credit| [credit.titleize, credit] },
+                       { prompt: "Select Credit Rating" },
+                       { class: "form-select" } %>
+</div>
+<div class="col-4">
+      <%= form.label :occupation, class: "form-label" %>
+       <%= form.select :occupation,
+                       LeadDriver::VALID_OCCUPATION.map { |occupation| [occupation.titleize, occupation] },
+                       { prompt: "Select Credit Rating" },
+                       { class: "form-select" } %>
+</div>
+
 
   <div class="actions ">
     <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
+

@@ -24,6 +24,24 @@
   <%= form.text_field :last_name, id: :lead_driver_last_name, class: "form-control" %>
 </div>
 
+<div class="mb-3">
+    <%= form.label :relationship, class: "form-label" %>
+    <%= form.select :relationship,
+                    LeadDriver::VALID_RELATIONSHIPS.map { |relationship| [relationship.titleize, relationship] },
+                    { prompt: "Select Relationship" },
+                    { class: "form-select" } %>
+</div>
+
+<div class="mb-3">
+    <%= form.label :gender, class: "form-label" %>
+    <%= form.select :gender,
+                  ["M", "F", "X"],
+                    { prompt: "Select gender" },
+                    { class: "form-select" } %>
+</div>
+
+ 
+
  <div class="mb-3">
     <%= form.label :marital_status, class: "form-label" %>
     <%= form.select :marital_status,
@@ -38,13 +56,7 @@
   </div>
  
 
-   <div class="mb-3">
-    <%= form.label :relationship, class: "form-label" %>
-    <%= form.select :relationship,
-                    LeadDriver::VALID_RELATIONSHIPS.map { |relationship| [relationship.titleize, relationship] },
-                    { prompt: "Select Relationship" },
-                    { class: "form-select" } %>
-  </div>
+   
 
   <div class="actions ">
     <%= form.submit class: "btn btn-primary" %>

@@ -554,3 +554,7 @@ body {
   text-align: center;
   margin-bottom: 20px; /* Spacing after the title */
 }
+
+.form-field-spacing {
+  margin-bottom: 20px; /* Adjust the value as needed */
+}

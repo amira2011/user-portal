@@ -1,5 +1,5 @@
 class LeadDriversController < ApplicationController
-  layout "admin"
+  # layout "admin"
   before_action :require_login
 
   def new

@@ -11,3 +11,8 @@ import "./jquery_ui";
 $("#notice").fadeOut(4000);
 $(".notice").fadeOut(2000);
 $("#alert").fadeOut(4000);
+$(document).on("click", ".nav-menu .menu li ", function () {
+  console.log($(this));
+  $(".nav-menu .menu li").removeClass("active");
+  $(this).addClass("active");
+});

@@ -1,89 +1,88 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-
-* {
-  margin: 0;
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap);
+*,
+.nav-menu .menu {
   padding: 0;
-  /* border: 1px solid white; */
+  margin: 0;
 }
-
-body {
-  font-family: "Arial", sans-serif;
+.content-customise,
+.content-customise a {
+  color: #2c9ce5ff;
 }
-
-/******* Lead Page*******/
-
+.content-customise a,
+.leads-table tbody tr td a,
+.nav-menu .menu li a {
+  text-decoration: none;
+}
+.center-wrapper,
 .wrapper {
-  display: flex;
-  flex-direction: row;
   height: 100vh;
+  display: flex;
 }
-
+.form-title,
+.login-logo,
+.logo,
+.nav-menu .menu,
+.text-center {
+  text-align: center;
+}
+body {
+  font-family: Arial, sans-serif;
+}
+.wrapper {
+  flex-direction: row;
+}
 .side-bar {
   background-color: #2b3043ff;
   width: 380px;
   display: flex;
   flex-direction: column;
 }
-
 .logo {
   margin-top: 5px;
-  text-align: center;
 }
 .side-bar .logo img {
   padding: 5px;
-
   max-height: 100px;
   object-fit: contain;
 }
-
 .nav-menu {
   margin-top: 20px;
 }
-
 .nav-menu .menu {
   list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 .nav-menu .menu li {
   margin: 5px;
   padding: 5px;
   width: 90%;
   border-radius: 10px;
 }
-
 .nav-menu .menu li a {
   display: flex;
   align-items: center;
   padding: 10px 15px;
   color: #dac7c7;
-  text-decoration: none;
 }
-
-.nav-menu .menu li a .fas {
+.nav-menu .menu li a .fas,
+.navbar-header .nav-logo i {
   margin-right: 20px;
 }
-
 .nav-menu .menu li.active,
 .nav-menu .menu li:hover {
   background-color: #262935;
-  color: white;
+  color: #fff;
   border-radius: 10px;
 }
-
 .main-content {
-  width: calc(100% - 380px); /* Adjust this if sidebar width changes */
+  width: calc(100% - 380px);
   display: flex;
-  flex-direction: column; /* Stack child elements vertically */
-  flex-grow: 1; /* Take up all available space */
+  flex-direction: column;
+  flex-grow: 1;
 }
-
 .main-content .navbar-header {
   display: flex;
   flex-direction: row;
@@ -96,13 +95,14 @@ body {
   font-size: 24px;
   font-weight: 400;
 }
-.navbar-header .nav-logo i {
-  margin-right: 20px;
+.add-driver,
+.content-title,
+.lead h2 {
+  font-weight: 700;
 }
-
 .nav-search .btn {
-  background: rgb(185, 100, 114);
-  color: white;
+  background: #b96472;
+  color: #fff;
 }
 .nav-search input {
   padding-left: 5px;
@@ -112,11 +112,10 @@ body {
   width: 100%;
 }
 .nav-search input:focus {
-  border: 2px solid rgb(185, 100, 114);
-  outline: none;
+  border: 2px solid #b96472;
+  outline: 0;
   box-shadow: 0 0 8px rgba(185, 100, 114, 0.5);
 }
-
 #email-dropdownMenuLink {
   background-color: #f8f9fa;
   color: #333;
@@ -125,22 +124,21 @@ body {
   border-radius: 5px;
   text-decoration: none;
 }
-#email-dropdownMenuLink:hover,
-#email-dropdownMenuLink:focus {
+#email-dropdownMenuLink:focus,
+#email-dropdownMenuLink:hover {
   background-color: #e2e6ea;
   color: #000;
   box-shadow: 0 0 5px rgba(185, 100, 114, 0.5);
   border: none;
 }
 .email-dropdown-menu {
-  min-width: 200px; /* Set minimum width */
+  min-width: 200px;
 }
 .content {
   display: flex;
-
   flex-direction: column;
-  flex-grow: 1; /* Allow content to expand and fill the available space */
-  width: 100%; /* Take up all available width */
+  flex-grow: 1;
+  width: 100%;
   background: #f0eded;
 }
 .content-header {
@@ -152,26 +150,15 @@ body {
 }
 .content-title {
   font-size: 1.3rem;
-  font-weight: 700;
 }
 .content-title i {
   font-size: 1rem;
 }
-.content-customise {
-  color: #2c9ce5ff;
-}
-
 .content-customise i {
   margin: 5px;
 }
-
-.content-customise a {
-  text-decoration: none;
-  color: #2c9ce5ff;
-}
-
 .content-table {
-  margin: 0px 25px;
+  margin: 0 25px;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -182,13 +169,8 @@ body {
   margin-top: 10px;
   padding: 10px;
 }
-
-.leads-table tbody tr td a {
-  text-decoration: none;
-}
-
-.leads-table th,
-.leads-table td {
+.leads-table td,
+.leads-table th {
   text-align: left;
   padding: 10px;
   border-bottom: 1px solid #ddd;
@@ -196,56 +178,49 @@ body {
 }
 .leads-table thead th {
   padding: 12px;
-
   text-align: left;
 }
-
-/******* Login Page*******/
 .center-wrapper {
   background-color: #f8f8f8;
-  display: flex;
   justify-content: center;
   align-items: baseline;
-  height: 100vh;
   width: 100vw;
   padding-top: 50px;
-
-  /* Example: 30% of the viewport height minus 50px */
 }
-
 .login-container {
-  position: absolute; /* Position the element absolutely relative to its first positioned (not static) ancestor */
-  top: 30%; /* Position the top edge of the element in the middle of the screen */
-  left: 50%; /* Position the left edge of the element in the middle of the screen */
+  position: absolute;
+  top: 30%;
+  left: 50%;
   transform: translate(-50%, -50%);
 }
 .login-logo {
-  text-align: center;
   margin: 20px 0;
 }
-
-.login-wrapper {
+.login-wrapper,
+.registration-wrapper {
   width: 420px;
-  background: #eeeeee;
+  background: #eee;
   border: 2px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
   padding: 30px 40px;
 }
-
 .text-center {
-  text-align: center;
-  color: rgba(233, 55, 138, 1);
+  color: #e9378a;
 }
-
-.login-wrapper .input-box {
+.add-driver,
+.edit-link {
+  color: #d63384;
+  text-decoration: none;
+}
+.login-wrapper .input-box,
+.registration-wrapper .input-box {
   width: 100%;
   height: 50px;
   position: relative;
   margin: 30px 0;
 }
-
 .login-wrapper .input-box input {
   height: 100%;
   width: 100%;
@@ -253,163 +228,99 @@ body {
   border-radius: 40px;
   font-size: 16px;
   padding: 20px 45px 20px 20px;
-  transition: border 0.1s ease; /* Add a transition effect for the border */
+  transition: border 0.1s;
 }
-
-.login-wrapper .input-box input:focus {
-  border: 2px solid rgba(202, 148, 148, 1);
-}
-
-.login-wrapper .input-box i {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-  color: rgba(233, 55, 138, 1);
-}
-
-.login-wrapper .btn {
-  width: 100%;
-  height: 45px;
-  border: none;
-  outline: none;
-  border-radius: 40px;
-  font-weight: bold;
-  font-size: 16px;
-  background-color: rgba(233, 55, 138, 1);
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.login-wrapper .register-link {
-  font-size: 14.5px;
-  text-align: center;
-  margin-top: 20px;
-}
-.login-wrapper .register-link p a {
-  color: rgba(233, 55, 138, 1);
-  text-decoration: none;
-  font-weight: 600;
-}
-.login-wrapper .register-link p a:hover {
-  text-decoration: underline;
-}
-
-/* Registration */
-
-.registration-wrapper {
-  width: 420px;
-  background: #eeeeee;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  padding: 30px 40px;
-}
-
-.registration-wrapper .input-box {
-  width: 100%;
-  height: 50px;
-  position: relative;
-  margin: 30px 0;
-}
-
-.registration-wrapper .input-box input {
-  width: 85%;
-  border: 1px solid rgba(202, 148, 148, 0.589);
-  border-radius: 40px;
-  font-size: 16px;
-  padding: 20px 45px 20px 20px;
-  transition: border 0.1s ease; /* Add a transition effect for the border */
-}
-
+.login-wrapper .input-box input:focus,
 .registration-wrapper .input-box input:focus {
-  border: 2px solid rgba(202, 148, 148, 1);
+  border: 2px solid #ca9494;
 }
-
+.login-wrapper .input-box i,
 .registration-wrapper .input-box i {
   position: absolute;
   right: 20px;
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
-  color: rgba(233, 55, 138, 1);
+  color: #e9378a;
 }
-
+.login-wrapper .btn,
 .registration-wrapper .btn {
   width: 100%;
   height: 45px;
   border: none;
-  outline: none;
+  outline: 0;
   border-radius: 40px;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 16px;
-  background-color: rgba(233, 55, 138, 1);
+  background-color: #e9378a;
   color: #fff;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-
+.login-wrapper .register-link,
 .registration-wrapper .register-link {
   font-size: 14.5px;
   text-align: center;
   margin-top: 20px;
 }
+.login-wrapper .register-link p a {
+  color: #e9378a;
+  text-decoration: none;
+  font-weight: 600;
+}
+.add-driver:hover,
+.edit-link:hover,
+.login-wrapper .register-link p a:hover,
+.registration-wrapper .register-link p a:hover {
+  text-decoration: underline;
+}
+.registration-wrapper .input-box input {
+  width: 85%;
+  border: 1px solid rgba(202, 148, 148, 0.589);
+  border-radius: 40px;
+  font-size: 16px;
+  padding: 20px 45px 20px 20px;
+  transition: border 0.1s;
+}
 .registration-wrapper .register-link p a {
-  color: rgba(233, 55, 138, 1);
+  color: #e9378a;
   text-decoration: none;
   font-weight: 600;
   font-size: 16.5px;
 }
-.registration-wrapper .register-link p a:hover {
-  text-decoration: underline;
-}
-
-/*********LEad Details **********/
 .lead-details-container {
   width: 100%;
   padding: 25px;
 }
-
 .lead-details-header {
   display: flex;
   align-items: center;
   font-size: 1.5rem;
 }
-
 .lead-details-header i {
   font-size: 2rem;
   color: pink;
   margin-right: 0.5rem;
 }
-
 .lead-details-header h3 {
   margin: 0;
   font-size: 1.5rem;
-  color: black;
+  color: #000;
 }
 .lead-details {
   display: flex;
   margin-top: 24px;
 }
-
 .lead-container {
   width: 450px;
   padding: 10px;
   border-radius: 10px;
   margin-right: 50px;
 }
-
 .lead {
   padding: 10px 10px 10px 20px;
   border-bottom: 1px solid rgba(199, 199, 199, 0.51);
-}
-.lead h2 {
-  font-weight: 700;
 }
 .lead .label {
   font-size: 18px;
@@ -418,29 +329,24 @@ body {
 .lead .value1 {
   font-size: 16px;
 }
-
 .lead-nav-pill .nav-item .nav-link {
   text-decoration: none;
-  background-color: #bbbbbb;
+  background-color: #bbb;
   border-radius: 30px;
 }
-
 .nav-item .nav-link {
-  background-color: lightgrey;
+  background-color: #d3d3d3;
   border-radius: 30px;
-  color: black;
+  color: #000;
   margin-right: 8px;
 }
-
 .nav-pills .nav-link.active {
   color: #fff;
   background-color: #6898e0;
 }
-
 .lead-tab-content {
   width: 100%;
 }
-
 .driver-details-container,
 .vehicle-details-container,
 .violation-details-container {
@@ -455,7 +361,6 @@ body {
   margin: 5px;
   padding: 10px;
 }
-
 .driver-details-header,
 .vehicle-details-header {
   padding-bottom: 25px;
@@ -468,32 +373,16 @@ body {
 .driver-details-header h5 {
   margin-right: 15px;
 }
-
 .info-row {
   border-bottom: 1px solid #dee2e6;
   padding: 8px 0;
 }
-
 .edit-link {
-  text-decoration: none;
-  color: #d63384;
   margin-left: 8px;
 }
-
-.edit-link:hover {
-  text-decoration: underline;
-}
-
 .add-driver {
   display: block;
   padding: 8px 0;
-  color: #d63384;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.add-driver:hover {
-  text-decoration: underline;
 }
 .profile-container {
   display: flex;
@@ -501,7 +390,6 @@ body {
   align-items: center;
   background-color: #f4f4f4;
 }
-
 .profile-wrapper {
   display: flex;
   flex-direction: row;
@@ -512,23 +400,17 @@ body {
   margin-top: 50px;
   border-radius: 8px;
 }
-
 .profile-photo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 25px;
-  padding-bottom: 15px;
+  padding: 25px 25px 15px;
 }
-
 .profile-info {
   display: flex;
   flex-direction: column;
-  padding: 25px;
-
-  padding-top: 0;
+  padding: 0 25px 25px;
 }
-
 .profile-img img {
   display: block;
   width: 170px;
@@ -538,23 +420,19 @@ body {
   border: 4px solid #eaeaea;
 }
 .input-group {
-  margin-bottom: 15px; /* Spacing between each input group */
+  margin-bottom: 15px;
 }
-
+.form-field-spacing,
+.form-title {
+  margin-bottom: 20px;
+}
 .input-group input {
   width: 100%;
   padding: 10px;
-  border: 1px solid #ced4da; /* Bootstrap's default input border color */
-  border-radius: 4px; /* Slightly rounded borders for the input */
+  border: 1px solid #ced4da;
+  border-radius: 4px;
   font-size: 1rem;
 }
-
 .form-title {
-  font-size: 1.5rem; /* Larger text for the form title */
-  text-align: center;
-  margin-bottom: 20px; /* Spacing after the title */
-}
-
-.form-field-spacing {
-  margin-bottom: 20px; /* Adjust the value as needed */
+  font-size: 1.5rem;
 }

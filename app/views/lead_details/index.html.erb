@@ -1,1 +1,257 @@
-<h1> Welcome Index </h1>
+<div class="content">
+    <div class="lead-details-container">
+        <div class="lead-details-header d-flex align-items-center">
+            <i class="fas fa-arrow-left me-2"></i>
+            <h3>Lead Details</h3>
+        </div>
+
+        <div class="lead-details">
+            <div class="lead-container bg-light">
+                <div class="lead lead-header">
+                    <h2><%= @lead.contact %></h2>
+                </div>
+                <div>
+                    <div class="lead">
+                        <div class="label">Email</div>
+                        <div class="value1"><%= @lead.email %></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="lead">
+                        <div class="label">Phone</div>
+                        <div class="value1"><%= @lead.phone %></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="lead">
+                        <div class="label">Address</div>
+                        <div class="value1"><%= @lead.complete_address %></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="lead">
+                        <div class="label">Lead Recieved</div>
+                        <div class="value1">
+                            <%= @lead.created_at.to_time.strftime("%A,%d/%m/%y ,%I:%M%p") %>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="lead">
+                        <div class="label">Type</div>
+                        <div class="value1">Auto</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="lead">
+                        <div class="label">Cost</div>
+                         <div class="value1">1.5$</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="lead">
+                        <div class="label">Military_affiliation</div>
+                        <div class="value1"><%= @lead_detail.military_affiliation %></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="lead">
+                        <div class="label">Current Company</div>
+                        <div class="value1"><%= @lead_detail.current_company %></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-content lead-tab-content">
+                <!-- Nav tabs -->
+                <ul class="nav nav-pills lead-nav-pill">
+                    <li class="nav-item me-2">
+                        <a class="nav-link active" data-bs-toggle="tab" href="#drivers">Drivers</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" data-bs-toggle="tab" href="#vehicles">Vehicles</a>
+                    </li>
+                    <li class="nav-item me-2">
+                        <a class="nav-link" data-bs-toggle="tab" href="#violations">Violations</a>
+                    </li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content bg-light mt-5" style="border-radius: 10px">
+                    <div id="drivers" class="container-fluid tab-pane active driver-details-container">
+                        <% @lead_drivers.each do |driver| %>
+                        <div class="driver-container">
+                            <header class="d-flex driver-details-header mt-2">
+                                <h5><span class="fas fa-user"></span> <%= "#{driver.first_name} #{driver.last_name}" %> </h5>
+                                <%= link_to "Edit", edit_lead_lead_driver_path(@lead, driver), class: "edit-link", "data-bs-toggle": "modal", "data-bs-target": "#editDriverModal", remote: true %>
+                            </header>
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="info-row">
+                                        <strong>First Name</strong><br />
+                                            <%= driver.first_name %>
+                                    </div>
+                                    <div class="info-row">
+                                        <strong>Last Name</strong><br />
+                                            <%= driver.last_name %>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="info-row">
+                                        <strong>Date of Birth</strong><br />
+                                             <% if driver.birth_date.present? %>
+                                                    <%= driver.birth_date.strftime("%d/%m/%Y") %>
+                                            <% end %>
+                                    </div>
+                                    <div class="info-row">
+                                        <strong>Marital Status</strong><br />
+                                        <%= driver.marital_status %>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="info-row">
+                                        <strong>Relationship</strong><br />
+                                        <%= driver.relationship %>
+                                    </div>
+                                    <div class="info-row">
+                                        <strong>Occupation</strong><br />
+                                        <%= driver.occupation %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                     <% end %>
+                     <%= link_to "Add New Driver", new_lead_lead_driver_path(@lead), class: "btn btn-primary", 'data-bs-toggle': "modal", 'data-bs-target': "#newDriverModal", remote: true %>
+                    </div>
+
+                    <div id="vehicles" class="container-fluid tab-pane fade vehicle-details-container">
+                        <% @lead_vehicles.each do |vehicle| %>
+                        <div class="vehicle-container">
+                            <header class="d-flex vehicle-details-header mt-2">
+                                <h5><span class="fas fa-car"></span> Vehicle Details</h5>
+                                <a href="#" class="edit-link">Edit</a>
+                            </header>
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="info-row">
+                                        <strong>Year</strong><br />
+                                        <%= vehicle.year %>
+                                    </div>
+                                    <div class="info-row">
+                                        <strong>Make</strong><br />
+                                        <%= vehicle.make %>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="info-row">
+                                        <strong>Model</strong><br />
+                                        <%= vehicle.model %>
+                                    </div>
+                                    <div class="info-row">
+                                        <strong>Submodel</strong><br />
+                                        <%= vehicle.submodel %>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-4">
+                                    <div class="info-row">
+                                        <strong>VIN</strong><br />
+                                        <%= vehicle.vin %>
+                                    </div>
+                                    <div class="info-row">
+                                        <strong>Alarm</strong><br />
+                                        <%= vehicle.alarm ? "Yes" : "No" %>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                   
+                        </div>
+                        <% end %>    
+                    </div>
+
+                    <div id="violations" class="container-fluid tab-pane fade violation-details-container">
+                        <% @lead_violations.each do |violation| %>
+                        <div class="violation-container">
+                            <header class="d-flex violation-details-header mt-2">
+                                <h5><span class="fas fa-exclamation-triangle"></span> Violation Details </h5>
+                                <a href="#" class="edit-link">Edit</a>
+                            </header>
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <div class="info-row">
+                                        <strong>Violation Type</strong><br />
+                                        <%= violation.violation_type %>
+                                    </div>
+                                    <div class="info-row">
+                                        <strong>Incident Date</strong><br />
+                                        <%= violation.incident_date.strftime("%d/%m/%Y") %>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="info-row">
+                                        <strong>Description</strong><br />
+                                        <%= violation.description %>
+                                    </div>
+                                    <div class="info-row">
+                                        <strong>What Damaged</strong><br />
+                                        <%= violation.what_damaged %>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <div class="info-row">
+                                        <strong>Accident at Fault</strong><br />
+                                        <%= violation.accident_at_fault ? "Yes" : "No" %>
+                                    </div>
+                                    <div class="info-row">
+                                        <strong>Claim at Fault</strong><br />
+                                        <%= violation.claim_at_fault ? "Yes" : "No" %>
+                                    </div>
+                                </div>
+
+                            </div>
+                            
+
+                        </div>
+                        <% end %>
+                        <a href="#" class=" btn btn-primary  add-violation">+ Add Violation</a>
+                    </div>
+                </div>   
+            </div>                         
+        </div>                
+
+
+    </div>
+
+        
+
+    </div>
+
+   
+
+</div>            
+
+
+
+
+<!-- Modal Placeholder -->
+<div class="modal fade" id="editDriverModal" tabindex="-1" aria-labelledby="editDriverModalLabel" aria-hidden="true">
+  <div class="modal-dialog" style="min-width: 500px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editDriverModalLabel">Edit Driver</h5>
+        <button type="button" class="close btn" data-bs-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body p-3">
+      <div>Welcome to Modal</div>
+        <!-- Content will be loaded dynamically -->
+      </div>
+    </div>
+  </div>
+</div>

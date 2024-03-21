@@ -3,6 +3,11 @@ class LeadDetailsController < ApplicationController
   before_action :require_login
 
   def index
+    @lead = Lead.find(params[:lead_id])
+    @lead_detail = @lead.lead_detail
+    @lead_drivers = @lead.lead_drivers
+    @lead_vehicles = @lead.lead_vehicles
+    @lead_violations = @lead.lead_violations
   end
 
   def show

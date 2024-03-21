@@ -17,7 +17,7 @@ class LeadDriversController < ApplicationController
     respond_to do |format|
       if @lead_driver.save
         # format.html { redirect_to lead_lead_driver_path(@lead, @lead_driver), notice: "Lead driver was successfully created." }
-        format.html { redirect_to lead_detail_path(id: @lead_driver.lead_id)  , notice: "Lead driver was successfully created." }
+        format.html { redirect_to lead_detail_path(id: @lead_driver.lead_id), notice: "Lead driver was successfully created." }
       else
         format.html { render :new, status: :unprocessable_entity }
       end
@@ -39,7 +39,8 @@ class LeadDriversController < ApplicationController
     # @lead_driver = LeadDriver.find(params[:id])
     if @lead_driver.update(lead_driver_params)
       # redirect_to @lead_driver, notice: "Lead driver was successfully updated."
-      redirect_to lead_detail_path(id: @lead_driver.lead_id), notice: "Driver was successfully updated."
+      #redirect_to lead_detail_path(id: @lead_driver.lead_id), notice: "Driver was successfully updated."
+      redirect_to lead_details_path(lead_id: @lead_driver.lead_id)
     else
       render :edit, status: :unprocessable_entity
     end

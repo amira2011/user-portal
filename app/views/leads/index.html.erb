@@ -28,7 +28,7 @@
                 <tbody>
                   <% @leads.each_with_index do |lead, idx| %>
                   <tr>
-                    <td> <%= link_to "#{lead.contact}", lead_detail_path(lead.id), class: "btn btn-link " %> </td>
+                    <td> <%= link_to "#{lead.contact}", lead_details_path(lead_id: lead.id), class: "btn btn-link " %> </td>
                 <td><%= lead.email %></td>
                 <td><%= lead.phone %></td>
                 <td><%= lead.complete_address %></td>

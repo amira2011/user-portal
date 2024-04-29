@@ -109,6 +109,6 @@ namespace :db do
         end
       end
     end
-    puts "Database populated successfully!"
+    puts "Database populated successfully ok!"
   end
 end

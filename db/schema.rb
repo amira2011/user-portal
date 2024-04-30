@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2024_03_09_040642) do
-  create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "active_storage_attachments", charset: "latin1", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
     t.bigint "record_id", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_09_040642) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
-  create_table "active_storage_blobs", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "active_storage_blobs", charset: "latin1", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
     t.string "content_type"
@@ -33,13 +33,13 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_09_040642) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "active_storage_variant_records", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "active_storage_variant_records", charset: "latin1", force: :cascade do |t|
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "lead_details", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "lead_details", charset: "latin1", force: :cascade do |t|
     t.bigint "lead_id", null: false
     t.boolean "home_garage"
     t.boolean "home_owner"
@@ -61,7 +61,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_09_040642) do
     t.index ["lead_id"], name: "index_lead_details_on_lead_id"
   end
 
-  create_table "lead_drivers", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "lead_drivers", charset: "latin1", force: :cascade do |t|
     t.bigint "lead_id", null: false
     t.string "first_name"
     t.string "last_name"
@@ -86,7 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_09_040642) do
     t.index ["relationship"], name: "index_lead_drivers_on_relationship"
   end
 
-  create_table "lead_vehicles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "lead_vehicles", charset: "latin1", force: :cascade do |t|
     t.bigint "lead_id", null: false
     t.bigint "lead_driver_id", null: false
     t.string "year"
@@ -108,7 +108,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_09_040642) do
     t.index ["lead_id"], name: "index_lead_vehicles_on_lead_id"
   end
 
-  create_table "lead_violations", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "lead_violations", charset: "latin1", force: :cascade do |t|
     t.bigint "lead_driver_id", null: false
     t.bigint "lead_id", null: false
     t.string "violation_type"
@@ -126,7 +126,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_09_040642) do
     t.index ["lead_id"], name: "index_lead_violations_on_lead_id"
   end
 
-  create_table "leads", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "leads", charset: "latin1", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
     t.string "email"
@@ -142,7 +142,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_03_09_040642) do
     t.index ["user_id"], name: "index_leads_on_user_id"
   end
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", charset: "latin1", force: :cascade do |t|
     t.string "name"
     t.string "email", null: false
     t.string "crypted_password"

@@ -3,13 +3,13 @@
 namespace :db do
   desc "Populate users, leads, and lead details"
   task populate_data: :environment do
-    # Populate Users
+    # Populate Users of
     5.times do
       user = User.create!(
         name: Faker::Name.name,
-        email: Faker::Internet.email,
-        password: "12345",
-        password_confirmation: "12345",
+        email: "admin#{i + 1}@example.com",
+        password: "password",
+        password_confirmation: "password",
       )
 
       # Populate Leads and Lead Details for each User
@@ -109,6 +109,6 @@ namespace :db do
         end
       end
     end
-    puts "Database populated successfully ok!"
+    puts "Database populated successfully!"
   end
 end

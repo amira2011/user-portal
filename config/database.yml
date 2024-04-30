@@ -4,7 +4,7 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: abid
   password: password
-  host: 127.0.0.1
+  host: mysql  # Use Docker service name as the host
 
 development:
   <<: *default
@@ -17,6 +17,3 @@ test:
 production:
   <<: *default
   database: user_portal_production
-  username: abid
-  password: password
-  host: your_mysql_production_host

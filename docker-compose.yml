@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+  # MySQL service configuration
+  mysql:
+    image: mysql:5.7
+    container_name: mysql_57
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: user_portal_development
+      MYSQL_USER: abid
+      MYSQL_PASSWORD: password
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  user_portal:
+    build: .
+    container_name: user_portal
+     
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: development
+      DATABASE_HOST: mysql
+      DATABASE_USER: abid
+      DATABASE_PASSWORD: password
+      DATABASE_NAME: user_portal_development
+    volumes:
+      - .:/app
+    depends_on:
+      - mysql
+  
+
+volumes:
+  mysql_data:
+    driver: local
